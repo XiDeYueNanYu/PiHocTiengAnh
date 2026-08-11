@@ -1,0 +1,83 @@
+{
+  "lessons": [
+    {
+      "id": "lesson1",
+      "title": "Bài 1: Đồ vật quanh em",
+      "teacherPools": {
+        "type1": ["teacher_01.png", "teacher_02.png", "teacher_03.png"],
+        "type4": ["teacher_04.png", "teacher_05.png"],
+        "type5": ["teacher_06.png", "teacher_07.png"]
+      },
+      "words": [
+        {
+          "en": "ant",
+          "vi": "con kiến",
+          "ipa": "/ænt/",
+          "gif": "ant.gif",
+          "audioWordVi": "con-kien.mp3",
+          "audioWordEn": "ant.mp3",
+          "sentenceEn": "This is an ant.",
+          "sentenceVi": "Đây là con kiến.",
+          "audioSentenceVi": "vn_ant.mp3",
+          "audioSentenceEn": "el_ant.mp3",
+          "questionEn": "What is this?",
+          "questionVi": "Đây là gì?",
+          "audioQuestion": "question.mp3",
+          "answerEn": "This is an ant.",
+          "audioAnswer": "el_ant.mp3"
+        },
+        {
+          "en": "ax",
+          "vi": "cái rìu",
+          "ipa": "/æks/",
+          "gif": "ax.gif",
+          "audioWordVi": "cai-riu.mp3",
+          "audioWordEn": "ax.mp3",
+          "sentenceEn": "This is an ax.",
+          "sentenceVi": "Đây là cái rìu.",
+          "audioSentenceVi": "vn_ax.mp3",
+          "audioSentenceEn": "el_ax.mp3",
+          "questionEn": "What is this?",
+          "questionVi": "Đây là gì?",
+          "audioQuestion": "question.mp3",
+          "answerEn": "This is an ax.",
+          "audioAnswer": "el_ax.mp3"
+        },
+        {
+          "en": "apple",
+          "vi": "quả táo",
+          "ipa": "/ˈæp.əl/",
+          "gif": "apple.gif",
+          "audioWordVi": "qua-tao.mp3",
+          "audioWordEn": "apple.mp3",
+          "sentenceEn": "This is an apple.",
+          "sentenceVi": "Đây là quả táo.",
+          "audioSentenceVi": "vn_apple.mp3",
+          "audioSentenceEn": "el_apple.mp3",
+          "questionEn": "What is this?",
+          "questionVi": "Đây là gì?",
+          "audioQuestion": "question.mp3",
+          "answerEn": "This is an apple.",
+          "audioAnswer": "el_apple.mp3"
+        },
+        {
+          "en": "alligator",
+          "vi": "con cá sấu",
+          "ipa": "/ˈæl.ɪ.ɡeɪ.tər/",
+          "gif": "alligator.gif",
+          "audioWordVi": "con-ca-sau.mp3",
+          "audioWordEn": "alligator.mp3",
+          "sentenceEn": "This is an alligator.",
+          "sentenceVi": "Đây là con cá sấu.",
+          "audioSentenceVi": "vn_alligator.mp3",
+          "audioSentenceEn": "el_alligator.mp3",
+          "questionEn": "What is this?",
+          "questionVi": "Đây là gì?",
+          "audioQuestion": "question.mp3",
+          "answerEn": "This is an alligator.",
+          "audioAnswer": "el_alligator.mp3"
+        }
+      ]
+    }
+  ]
+}

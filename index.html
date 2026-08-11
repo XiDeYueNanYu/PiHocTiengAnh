@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<title>Pi Học Tiếng Anh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sky:#4FC3F7;
+    --sky-deep:#1E88C7;
+    --sun:#FFC93C;
+    --coral:#FF6F59;
+    --mint:#3FCB94;
+    --ink:#1F2A44;
+    --paper:#FFFFFF;
+    --bg-top:#BEE7FF;
+    --bg-bot:#EAF7FF;
+    --shadow: 0 6px 0 rgba(31,42,68,0.15);
+    --radius: 22px;
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color: transparent;}
+  html,body{height:100%;}
+  body{
+    margin:0;
+    font-family:'Nunito', sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(circle at 15% 8%, #ffffff55 0, transparent 40%),
+      linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bot) 60%);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{font-family:'Baloo 2', cursive;}
+
+  /* ---------- Header ---------- */
+  header.topbar{
+    padding: 14px 16px 10px;
+    display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px;
+    justify-content:space-between;
+  }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+  }
+  .brand .mascot{
+    width:44px; height:44px; border-radius:50%;
+    background: radial-gradient(circle at 35% 30%, #fff, var(--sun) 60%);
+    border:3px solid var(--ink);
+    display:flex; align-items:center; justify-content:center;
+    font-size:22px;
+    box-shadow: var(--shadow);
+    flex-shrink:0;
+  }
+  .brand h1{
+    margin:0; font-size:1.35rem; color:var(--sky-deep);
+    letter-spacing:0.5px;
+  }
+  .brand h1 span{color:var(--coral);}
+
+  select#lessonSelect{
+    font-family:'Nunito',sans-serif;
+    font-weight:800;
+    font-size:0.95rem;
+    padding:10px 14px;
+    border-radius:14px;
+    border:3px solid var(--ink);
+    background:var(--paper);
+    color:var(--ink);
+    box-shadow: var(--shadow);
+    max-width: 100%;
+  }
+
+  nav.modes{
+    display:flex; flex-wrap:wrap; gap:8px;
+    padding: 4px 16px 14px;
+  }
+  .mode-btn{
+    font-family:'Baloo 2', cursive;
+    font-size:0.95rem;
+    font-weight:700;
+    border:3px solid var(--ink);
+    border-radius:16px;
+    padding:9px 14px;
+    background:var(--paper);
+    color:var(--ink);
+    cursor:pointer;
+    box-shadow: var(--shadow);
+    transition: transform .12s ease;
+    white-space:nowrap;
+  }
+  .mode-btn:active{ transform: translateY(3px); box-shadow:none; }
+  .mode-btn.active{
+    background: var(--sky);
+    color:#fff;
+  }
+
+  /* ---------- Main stage ---------- */
+  main{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    padding: 6px 14px 150px;
+    width:100%;
+  }
+
+  .progress{
+    display:flex; gap:6px; flex-wrap:wrap; justify-content:center;
+    margin: 4px 0 16px;
+    max-width: 600px;
+  }
+  .progress .dot{
+    width:12px; height:12px; border-radius:50%;
+    background:#ffffffaa; border:2px solid var(--ink);
+  }
+  .progress .dot.on{ background: var(--sun); }
+
+  .stage-card{
+    width:100%;
+    max-width: 720px;
+    background: var(--paper);
+    border:4px solid var(--ink);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 0 rgba(31,42,68,0.18);
+    padding: 20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:14px;
+  }
+
+  .images-row{
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    gap:18px;
+    width:100%;
+    flex-wrap:wrap;
+  }
+  .img-box{
+    width: 44%;
+    max-width: 260px;
+    min-width: 130px;
+    aspect-ratio:1/1;
+    border-radius:18px;
+    border:3px solid var(--ink);
+    background:#fff8ea;
+    display:flex; align-items:center; justify-content:center;
+    overflow:hidden;
+  }
+  .img-box img{ width:100%; height:100%; object-fit:contain; }
+  .teacher-box{ background:#eaf6ff; }
+
+  .info-block{ text-align:center; }
+  .info-block .en{ font-family:'Baloo 2',cursive; font-size:1.7rem; color:var(--sky-deep); margin:0; }
+  .info-block .ipa{ font-size:1rem; color:#6b7690; margin:2px 0; }
+  .info-block .vi{ font-size:1.15rem; font-weight:800; margin:0; }
+  .info-block .sentence-en{ font-family:'Baloo 2',cursive; font-size:1.4rem; color:var(--sky-deep); margin:4px 0 0; }
+  .info-block .sentence-vi{ font-size:1.05rem; font-weight:700; margin:2px 0 0; }
+  .qa-block{ text-align:center; }
+  .qa-block .q{ font-family:'Baloo 2',cursive; font-size:1.4rem; color:var(--coral); margin:0; }
+  .qa-block .q-vi{ font-size:0.95rem; color:#6b7690; margin:2px 0 8px; }
+  .qa-block .a{ font-family:'Baloo 2',cursive; font-size:1.3rem; color:var(--mint); margin:0; min-height:1.6em; }
+  .qa-block .a-vi{ font-size:0.95rem; color:#6b7690; margin:2px 0 0; min-height:1.2em; }
+  .qa-block .a.hidden-answer{ visibility:hidden; }
+
+  /* choice grid for mode 2/3 */
+  .choice-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:12px;
+    width:100%;
+  }
+  .choice-card{
+    border:3px solid var(--ink);
+    border-radius:16px;
+    background:#fff8ea;
+    padding:8px;
+    cursor:pointer;
+    display:flex; flex-direction:column; align-items:center; gap:6px;
+    transition: transform .1s ease, background .2s ease, border-color .2s ease;
+  }
+  .choice-card img{ width:100%; aspect-ratio:1/1; object-fit:contain; border-radius:10px; }
+  .choice-card .cap{ font-weight:800; font-size:0.8rem; text-align:center; min-height:1.4em; }
+  .choice-card:active{ transform: scale(0.97); }
+  .choice-card.correct{ background:#dff9ec; border-color:var(--mint); }
+  .choice-card.wrong{ background:#ffe4e0; border-color:var(--coral); }
+  .choice-card.locked{ pointer-events:none; opacity:0.55; }
+
+  .hint-msg{
+    font-family:'Baloo 2',cursive;
+    font-size:1.1rem;
+    min-height:1.6em;
+    text-align:center;
+  }
+  .hint-msg.ok{ color:var(--mint); }
+  .hint-msg.bad{ color:var(--coral); }
+
+  @media (max-width: 480px){
+    .brand h1{ font-size:1.1rem; }
+    .info-block .en{ font-size:1.4rem; }
+    .info-block .sentence-en{ font-size:1.15rem; }
+    .choice-card .cap{ font-size:0.72rem; }
+  }
+
+  /* ---------- Floating control bar ---------- */
+  .control-bar{
+    position:fixed;
+    left:0; right:0; bottom:0;
+    background: var(--paper);
+    border-top:4px solid var(--ink);
+    border-radius: 22px 22px 0 0;
+    box-shadow: 0 -6px 18px rgba(31,42,68,0.18);
+    padding: 12px 14px calc(12px + env(safe-area-inset-bottom));
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    align-items:center;
+    z-index:20;
+  }
+  .control-options{
+    display:flex; flex-wrap:wrap; gap:14px; justify-content:center;
+    font-size:0.85rem; font-weight:700;
+  }
+  .control-options label{ display:flex; align-items:center; gap:6px; cursor:pointer; }
+  .control-options input[type=checkbox]{ width:18px; height:18px; accent-color: var(--sky-deep); }
+
+  .control-buttons{
+    display:flex; gap:10px; width:100%; max-width:520px;
+  }
+  .ctrl-btn{
+    flex:1;
+    font-family:'Baloo 2',cursive;
+    font-size:1rem;
+    font-weight:700;
+    padding:14px 8px;
+    border-radius:16px;
+    border:3px solid var(--ink);
+    background: var(--sky);
+    color:#fff;
+    box-shadow: var(--shadow);
+    cursor:pointer;
+  }
+  .ctrl-btn.secondary{ background: var(--sun); color: var(--ink); }
+  .ctrl-btn:active{ transform: translateY(3px); box-shadow:none; }
+  .ctrl-btn:disabled{ opacity:0.5; }
+
+  /* ---------- Unlock overlay ---------- */
+  .overlay{
+    position:fixed; inset:0; z-index:50;
+    background: linear-gradient(180deg, var(--bg-top), var(--bg-bot));
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:18px; text-align:center; padding:20px;
+  }
+  .overlay .mascot-big{
+    width:110px; height:110px; border-radius:50%;
+    background: radial-gradient(circle at 35% 30%, #fff, var(--sun) 60%);
+    border:4px solid var(--ink);
+    display:flex; align-items:center; justify-content:center;
+    font-size:52px;
+    box-shadow: var(--shadow);
+  }
+  .overlay h2{ font-size:1.6rem; color:var(--sky-deep); margin:0; }
+  .overlay p{ font-weight:700; margin:0; max-width:320px; }
+  .start-btn{
+    font-family:'Baloo 2',cursive;
+    font-size:1.3rem; font-weight:700;
+    padding:16px 40px;
+    border-radius:20px;
+    border:4px solid var(--ink);
+    background: var(--coral);
+    color:#fff;
+    box-shadow: 0 8px 0 rgba(31,42,68,0.25);
+    cursor:pointer;
+  }
+  .start-btn:active{ transform: translateY(4px); box-shadow:none; }
+  .hidden{ display:none !important; }
+</style>
+</head>
+<body>
+
+<div class="overlay" id="unlockOverlay">
+  <div class="mascot-big">🐣</div>
+  <h2>Pi Học Tiếng Anh</h2>
+  <p>Chạm vào nút bên dưới để bắt đầu buổi học và mở âm thanh nhé!</p>
+  <button class="start-btn" id="startBtn">Bắt Đầu</button>
+</div>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="mascot">🐣</div>
+    <h1>Pi <span>Học</span> Tiếng Anh</h1>
+  </div>
+  <select id="lessonSelect"></select>
+</header>
+
+<nav class="modes" id="modeNav">
+  <button class="mode-btn" data-mode="1">1. Từ vựng</button>
+  <button class="mode-btn" data-mode="2">2. Chọn ảnh (VI+EN)</button>
+  <button class="mode-btn" data-mode="3">3. Chọn ảnh (EN)</button>
+  <button class="mode-btn" data-mode="4">4. Câu VI-EN</button>
+  <button class="mode-btn" data-mode="5">5. Hỏi &amp; Đáp</button>
+</nav>
+
+<main>
+  <div class="progress" id="progressDots"></div>
+  <div class="stage-card" id="stage"></div>
+</main>
+
+<div class="control-bar" id="controlBar">
+  <div class="control-options" id="controlOptions"></div>
+  <div class="control-buttons">
+    <button class="ctrl-btn secondary" id="btnPrev">◀ Trước</button>
+    <button class="ctrl-btn secondary" id="btnReplay">🔊 Nghe Lại</button>
+    <button class="ctrl-btn" id="btnNext">Tiếp Theo ▶</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  const MEDIA_BASE = "media/";
+  const DATA_URL = "data/lessons.json";
+
+  let lessons = [];
+  let currentLessonIdx = 0;
+  let currentMode = 1;
+  let currentWordIdx = 0;
+  let audioUnlocked = false;
+
+  // per-question runtime state for mode 2/3
+  let choiceState = null; // {order:[idxA,idxB,idxC], correctIdx, answered:false}
+
+  // playback control token to cancel stale async chains
+  let playToken = 0;
+  let currentAudio = null;
+  let pendingTimeout = null;
+
+  const el = {
+    lessonSelect: document.getElementById('lessonSelect'),
+    modeNav: document.getElementById('modeNav'),
+    stage: document.getElementById('stage'),
+    progressDots: document.getElementById('progressDots'),
+    controlBar: document.getElementById('controlBar'),
+    controlOptions: document.getElementById('controlOptions'),
+    btnPrev: document.getElementById('btnPrev'),
+    btnNext: document.getElementById('btnNext'),
+    btnReplay: document.getElementById('btnReplay'),
+    overlay: document.getElementById('unlockOverlay'),
+    startBtn: document.getElementById('startBtn')
+  };
+
+  // option checkbox states, per session (kept across navigation, reset on mode switch is NOT required)
+  const opts = {
+    repeat: false,     // modes 1,2,3,4,5
+    autoNext: false,   // modes 2,3
+    noAnswer: false    // mode 5
+  };
+
+  function mediaSrc(name){ return MEDIA_BASE + name; }
+
+  function stopPlayback(){
+    playToken++;
+    if(currentAudio){
+      currentAudio.onended = null;
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+      currentAudio = null;
+    }
+    if(pendingTimeout){ clearTimeout(pendingTimeout); pendingTimeout = null; }
+  }
+
+  // Plays a sequence of {src, waitAfter} items in order. Returns nothing; calls onFinish when whole chain done.
+  function playChain(items, onFinish){
+    const myToken = ++playToken;
+    let i = 0;
+    function next(){
+      if(myToken !== playToken) return; // cancelled
+      if(i >= items.length){ if(onFinish) onFinish(myToken); return; }
+      const item = items[i];
+      const a = new Audio(mediaSrc(item.src));
+      currentAudio = a;
+      a.onended = () => {
+        if(myToken !== playToken) return;
+        i++;
+        if(item.waitAfter){
+          pendingTimeout = setTimeout(next, item.waitAfter);
+        } else {
+          next();
+        }
+      };
+      a.onerror = () => { if(myToken === playToken){ i++; next(); } };
+      a.play().catch(()=>{ /* blocked, ignore */ });
+    }
+    next();
+  }
+
+  function withRepeat(items, repeatDelay){
+    // wraps playChain so that if opts.repeat is true, it loops after repeatDelay ms
+    function run(){
+      playChain(items, (token) => {
+        if(!opts.repeat) return;
+        if(token !== playToken) return;
+        pendingTimeout = setTimeout(() => {
+          if(token !== playToken) return;
+          run();
+        }, repeatDelay);
+      });
+    }
+    run();
+  }
+
+  // ---------- Data loading ----------
+  fetch(DATA_URL).then(r => r.json()).then(data => {
+    lessons = data.lessons || [];
+    populateLessonSelect();
+    buildModeCheckboxes();
+    goToLesson(0, {resetMode:true});
+  }).catch(err => {
+    el.stage.innerHTML = '<p style="font-weight:800;color:var(--coral)">Không tải được dữ liệu bài học (data/lessons.json). Chi tiết: '+ (err.message||err) +'</p>';
+  });
+
+  function populateLessonSelect(){
+    el.lessonSelect.innerHTML = lessons.map((l,i) => `<option value="${i}">${escapeHtml(l.title)}</option>`).join('');
+    el.lessonSelect.addEventListener('change', () => {
+      goToLesson(parseInt(el.lessonSelect.value,10), {resetMode:true});
+    });
+  }
+
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  function goToLesson(idx, {resetMode}={}){
+    stopPlayback();
+    currentLessonIdx = idx;
+    el.lessonSelect.value = idx;
+    currentWordIdx = 0;
+    if(resetMode) currentMode = 1;
+    setActiveModeButton();
+    renderCurrent();
+  }
+
+  function currentLesson(){ return lessons[currentLessonIdx]; }
+  function currentWords(){ return (currentLesson() && currentLesson().words) || []; }
+  function currentWord(){ return currentWords()[currentWordIdx]; }
+
+  function randomFrom(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+
+  function randomTeacher(type){
+    const pools = (currentLesson() && currentLesson().teacherPools) || {};
+    const pool = pools[type] || [];
+    if(pool.length === 0) return null;
+    return randomFrom(pool);
+  }
+
+  // ---------- Mode switching ----------
+  el.modeNav.addEventListener('click', (e) => {
+    const btn = e.target.closest('.mode-btn');
+    if(!btn) return;
+    stopPlayback();
+    currentMode = parseInt(btn.dataset.mode,10);
+    currentWordIdx = 0;
+    setActiveModeButton();
+    buildModeCheckboxes();
+    renderCurrent();
+  });
+
+  function setActiveModeButton(){
+    [...el.modeNav.querySelectorAll('.mode-btn')].forEach(b => {
+      b.classList.toggle('active', parseInt(b.dataset.mode,10) === currentMode);
+    });
+  }
+
+  function buildModeCheckboxes(){
+    let html = `<label><input type="checkbox" id="chkRepeat" ${opts.repeat?'checked':''}> Lặp lại sau 3s</label>`;
+    if(currentMode === 2 || currentMode === 3){
+      html += `<label><input type="checkbox" id="chkAutoNext" ${opts.autoNext?'checked':''}> Tự chuyển câu khi đúng</label>`;
+    }
+    if(currentMode === 5){
+      html += `<label><input type="checkbox" id="chkNoAnswer" ${opts.noAnswer?'checked':''}> Không phát câu trả lời</label>`;
+    }
+    el.controlOptions.innerHTML = html;
+    const chkRepeat = document.getElementById('chkRepeat');
+    if(chkRepeat) chkRepeat.addEventListener('change', e => { opts.repeat = e.target.checked; });
+    const chkAutoNext = document.getElementById('chkAutoNext');
+    if(chkAutoNext) chkAutoNext.addEventListener('change', e => { opts.autoNext = e.target.checked; });
+    const chkNoAnswer = document.getElementById('chkNoAnswer');
+    if(chkNoAnswer) chkNoAnswer.addEventListener('change', e => { opts.noAnswer = e.target.checked; });
+  }
+
+  // ---------- Navigation buttons ----------
+  el.btnNext.addEventListener('click', () => stepWord(1));
+  el.btnPrev.addEventListener('click', () => stepWord(-1));
+  el.btnReplay.addEventListener('click', () => { stopPlayback(); playCurrentModeAudio(); });
+
+  function stepWord(dir){
+    stopPlayback();
+    const n = currentWords().length;
+    if(n === 0) return;
+    currentWordIdx = (currentWordIdx + dir + n) % n;
+    renderCurrent();
+  }
+
+  function renderProgress(){
+    const n = currentWords().length;
+    el.progressDots.innerHTML = '';
+    for(let i=0;i<n;i++){
+      const d = document.createElement('div');
+      d.className = 'dot' + (i===currentWordIdx ? ' on' : '');
+      el.progressDots.appendChild(d);
+    }
+  }
+
+  function renderCurrent(){
+    if(!currentLesson() || currentWords().length === 0){
+      el.stage.innerHTML = '<p style="font-weight:800">Bài học này chưa có từ vựng.</p>';
+      el.progressDots.innerHTML = '';
+      return;
+    }
+    renderProgress();
+    if(currentMode === 1) renderMode1();
+    else if(currentMode === 2) renderMode23(2);
+    else if(currentMode === 3) renderMode23(3);
+    else if(currentMode === 4) renderMode4();
+    else if(currentMode === 5) renderMode5();
+  }
+
+  function playCurrentModeAudio(){
+    if(currentMode === 1) playMode1Audio();
+    else if(currentMode === 2) playMode23Audio(2);
+    else if(currentMode === 3) playMode23Audio(3);
+    else if(currentMode === 4) playMode4Audio();
+    else if(currentMode === 5) playMode5Audio();
+  }
+
+  // ---------- MODE 1 ----------
+  function renderMode1(){
+    const w = currentWord();
+    const teacher = randomTeacher('type1');
+    el.stage.innerHTML = `
+      <div class="images-row">
+        <div class="img-box teacher-box">${teacher ? `<img src="${mediaSrc(teacher)}" alt="Cô giáo">` : ''}</div>
+        <div class="img-box"><img src="${mediaSrc(w.gif)}" alt="${escapeHtml(w.en)}"></div>
+      </div>
+      <div class="info-block">
+        <p class="en">${escapeHtml(w.en)}</p>
+        <p class="ipa">${escapeHtml(w.ipa||'')}</p>
+        <p class="vi">${escapeHtml(w.vi)}</p>
+      </div>
+    `;
+    playMode1Audio();
+  }
+  function playMode1Audio(){
+    const w = currentWord();
+    const items = [
+      {src:w.audioWordVi, waitAfter:1000},
+      {src:w.audioWordEn, waitAfter:0}
+    ];
+    withRepeat(items, 3000);
+  }
+
+  // ---------- MODE 4 ----------
+  function renderMode4(){
+    const w = currentWord();
+    const teacher = randomTeacher('type4');
+    el.stage.innerHTML = `
+      <div class="images-row">
+        <div class="img-box teacher-box">${teacher ? `<img src="${mediaSrc(teacher)}" alt="Cô giáo">` : ''}</div>
+        <div class="img-box"><img src="${mediaSrc(w.gif)}" alt="${escapeHtml(w.en)}"></div>
+      </div>
+      <div class="info-block">
+        <p class="sentence-en">${escapeHtml(w.sentenceEn)}</p>
+        <p class="sentence-vi">${escapeHtml(w.sentenceVi)}</p>
+      </div>
+    `;
+    playMode4Audio();
+  }
+  function playMode4Audio(){
+    const w = currentWord();
+    const items = [
+      {src:w.audioSentenceVi, waitAfter:1000},
+      {src:w.audioSentenceEn, waitAfter:0}
+    ];
+    withRepeat(items, 3000);
+  }
+
+  // ---------- MODE 5 ----------
+  function renderMode5(){
+    const w = currentWord();
+    const teacher = randomTeacher('type5');
+    el.stage.innerHTML = `
+      <div class="images-row">
+        <div class="img-box teacher-box">${teacher ? `<img src="${mediaSrc(teacher)}" alt="Cô giáo">` : ''}</div>
+        <div class="img-box"><img src="${mediaSrc(w.gif)}" alt="${escapeHtml(w.en)}"></div>
+      </div>
+      <div class="qa-block">
+        <p class="q">${escapeHtml(w.questionEn)}</p>
+        <p class="q-vi">${escapeHtml(w.questionVi||'')}</p>
+        <p class="a ${opts.noAnswer ? 'hidden-answer' : ''}" id="answerText">${escapeHtml(w.answerEn)}</p>
+        <p class="a-vi ${opts.noAnswer ? 'hidden-answer' : ''}" id="answerVi">${escapeHtml(w.sentenceVi||'')}</p>
+      </div>
+    `;
+    playMode5Audio();
+  }
+  function playMode5Audio(){
+    const w = currentWord();
+    const myToken = ++playToken;
+    const questionItem = [{src:w.audioQuestion, waitAfter: opts.noAnswer ? 0 : 2000}];
+    playChain(questionItem, (token) => {
+      if(token !== playToken) return;
+      if(opts.noAnswer) return; // do not play answer, do not repeat question
+      playChain([{src:w.audioAnswer, waitAfter:0}], (token2) => {
+        if(token2 !== playToken) return;
+        if(!opts.repeat) return;
+        pendingTimeout = setTimeout(() => {
+          if(token2 !== playToken) return;
+          playMode5Audio();
+        }, 3000);
+      });
+    });
+  }
+
+  // ---------- MODE 2 & 3 ----------
+  function buildChoices(){
+    const words = currentWords();
+    const correctIdx = currentWordIdx;
+    const otherIdxs = words.map((_,i)=>i).filter(i => i !== correctIdx);
+    // shuffle other indices, take up to 2
+    for(let i=otherIdxs.length-1;i>0;i--){
+      const j = Math.floor(Math.random()*(i+1));
+      [otherIdxs[i],otherIdxs[j]]=[otherIdxs[j],otherIdxs[i]];
+    }
+    const distractors = otherIdxs.slice(0,2);
+    const order = [correctIdx, ...distractors];
+    // shuffle order
+    for(let i=order.length-1;i>0;i--){
+      const j = Math.floor(Math.random()*(i+1));
+      [order[i],order[j]]=[order[j],order[i]];
+    }
+    return {order, correctIdx, answered:false};
+  }
+
+  function renderMode23(mode){
+    const words = currentWords();
+    if(words.length < 3){
+      el.stage.innerHTML = '<p style="font-weight:800">Bài học cần ít nhất 3 từ để chơi dạng này.</p>';
+      return;
+    }
+    choiceState = buildChoices();
+    const w = currentWord();
+    const cardsHtml = choiceState.order.map(idx => {
+      const cw = words[idx];
+      return `<div class="choice-card" data-idx="${idx}">
+        <img src="${mediaSrc(cw.gif)}" alt="lựa chọn">
+        <div class="cap">&nbsp;</div>
+      </div>`;
+    }).join('');
+    el.stage.innerHTML = `
+      <div class="choice-grid">${cardsHtml}</div>
+      <div class="info-block">
+        <p class="en">${escapeHtml(w.en)}</p>
+        <p class="ipa">${escapeHtml(w.ipa||'')}</p>
+        <p class="vi">${escapeHtml(w.vi)}</p>
+      </div>
+      <div class="hint-msg" id="hintMsg">&nbsp;</div>
+    `;
+    [...el.stage.querySelectorAll('.choice-card')].forEach(card => {
+      card.addEventListener('click', () => onChoiceClick(card));
+    });
+    playMode23Audio(mode);
+  }
+
+  function playMode23Audio(mode){
+    const w = currentWord();
+    let items;
+    if(mode === 2){
+      items = [
+        {src:w.audioWordVi, waitAfter:1000},
+        {src:w.audioWordEn, waitAfter:0}
+      ];
+    } else {
+      items = [{src:w.audioWordEn, waitAfter:0}];
+    }
+    withRepeat(items, 3000);
+  }
+
+  function onChoiceClick(card){
+    if(!choiceState || choiceState.answered) return;
+    const idx = parseInt(card.dataset.idx,10);
+    const hint = document.getElementById('hintMsg');
+    if(idx === choiceState.correctIdx){
+      choiceState.answered = true;
+      card.classList.add('correct');
+      [...el.stage.querySelectorAll('.choice-card')].forEach(c => c.classList.add('locked'));
+      if(hint){ hint.textContent = 'Chính xác! 🎉'; hint.className = 'hint-msg ok'; }
+      stopPlayback();
+      const a = new Audio(mediaSrc('Dung.mp3'));
+      a.play().catch(()=>{});
+      if(opts.autoNext){
+        pendingTimeout = setTimeout(() => { stepWord(1); }, 1400);
+      }
+    } else {
+      card.classList.add('wrong');
+      if(hint){ hint.textContent = 'Thử lại nhé!'; hint.className = 'hint-msg bad'; }
+      stopPlayback();
+      const a = new Audio(mediaSrc('Sai.mp3'));
+      a.play().catch(()=>{});
+      setTimeout(() => card.classList.remove('wrong'), 700);
+    }
+  }
+
+  // ---------- Unlock overlay ----------
+  el.startBtn.addEventListener('click', () => {
+    audioUnlocked = true;
+    // prime audio playback permission with a silent short play/pause
+    try{
+      const a = new Audio();
+      a.play().catch(()=>{});
+      a.pause();
+    }catch(e){}
+    el.overlay.classList.add('hidden');
+    renderCurrent();
+  });
+
+})();
+</script>
+</body>
+</html>
