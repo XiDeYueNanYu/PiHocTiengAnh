@@ -4,9 +4,9 @@
       "id": "lesson1",
       "title": "Bài 1 - A",
       "teacherPools": {
-        "type1": ["teacher_01.png", "teacher_02.png"],
-        "type4": ["teacher_01.png", "teacher_02.png"],
-        "type5": ["teacher_01.png", "teacher_02.png"]
+        "type1": ["teacher_03a.png"],
+        "type4": ["teacher_03a.png"],
+        "type5": ["teacher_02a.png"]
       },
       "words": [
         {
@@ -15,7 +15,7 @@
           "ipa": "/ænt/",
           "gif": "ant.gif",
           "audioWordVi": "con_kieesn.mp3",
-          "audioWordEn": "ant.wav",
+          "audioWordEn": "ant.mp3",
           "sentenceEn": "This is an ant.",
           "sentenceVi": "Đây là một con kiến.",
           "audioSentenceVi": "ddaay_laf_moojt_con_kieesn.mp3",
@@ -83,9 +83,9 @@
       "id": "lesson2",
       "title": "Bài 2 - B",
       "teacherPools": {
-        "type1": ["teacher_01.png", "teacher_02.png"],
-        "type4": ["teacher_01.png", "teacher_02.png"],
-        "type5": ["teacher_01.png", "teacher_02.png"]
+        "type1": ["teacher_03a.png"],
+        "type4": ["teacher_03a.png"],
+        "type5": ["teacher_02a.png"]
       },
       "words": [
         {
