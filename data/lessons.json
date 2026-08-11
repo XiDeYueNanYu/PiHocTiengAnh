@@ -2,7 +2,7 @@
   "lessons": [
     {
       "id": "lesson1",
-      "title": "Bài 1: Đồ vật quanh em",
+      "title": "Bài 1 - A",
       "teacherPools": {
         "type1": ["teacher_01.png", "teacher_02.png"],
         "type4": ["teacher_01.png", "teacher_02.png"],
@@ -76,6 +76,85 @@
           "audioQuestion": "question.mp3",
           "answerEn": "This is an alligator.",
           "audioAnswer": "el_alligator.mp3"
+        }
+      ]
+    },
+	    {
+      "id": "lesson2",
+      "title": "Bài 2 - B",
+      "teacherPools": {
+        "type1": ["teacher_01.png", "teacher_02.png"],
+        "type4": ["teacher_01.png", "teacher_02.png"],
+        "type5": ["teacher_01.png", "teacher_02.png"]
+      },
+      "words": [
+        {
+          "en": "bed",
+          "vi": "cái giường",
+          "ipa": "/bɛd/",
+          "gif": "bed.gif",
+          "audioWordVi": "casi_giuwowfng.mp3",
+          "audioWordEn": "bed.mp3",
+          "sentenceEn": "I like the bed.",
+          "sentenceVi": "Tôi thích cái giường.",
+          "audioSentenceVi": "tooi_thisch_casi_giuwowfng.mp3",
+          "audioSentenceEn": "i_like_the_bed.mp3",
+          "questionEn": "(...)",
+          "questionVi": "(...)",
+          "audioQuestion": "lenh1.mp3",
+          "answerEn": "I like the bed.",
+          "audioAnswer": "i_like_the_bed.mp3"
+        },
+        {
+          "en": "banana",
+          "vi": "quả chuối",
+          "ipa": "/bəˈnænə/",
+          "gif": "banana.gif",
+          "audioWordVi": "quar_chuoosi.mp3",
+          "audioWordEn": "banana.mp3",
+          "sentenceEn": "I like the banana.",
+          "sentenceVi": "tôi thích quả chuối.",
+          "audioSentenceVi": "tooi_thisch_quar_chuoosi.mp3",
+          "audioSentenceEn": "i_like_the_banana.mp3",
+          "questionEn": "(...)",
+          "questionVi": "(...)",
+          "audioQuestion": "lenh1.mp3",
+          "answerEn": "I like the banana.",
+          "audioAnswer": "i_like_the_banana.mp3"
+        },
+        {
+          "en": "bird",
+          "vi": "con chim",
+          "ipa": "/bɜːrd/",
+          "gif": "bird.gif",
+          "audioWordVi": "con_chim.mp3",
+          "audioWordEn": "bird.mp3",
+          "sentenceEn": "I like the bird.",
+          "sentenceVi": "tôi thích con chim.",
+          "audioSentenceVi": "tooi_thisch_con_chim.mp3",
+          "audioSentenceEn": "i_like_the_bird.mp3",
+          "questionEn": "(...)",
+          "questionVi": "(...)",
+          "audioQuestion": "lenh1.mp3",
+          "answerEn": "I like the bird.",
+          "audioAnswer": "i_like_the_bird.mp3"
+        },
+        {
+          "en": "bear",
+          "vi": "con gấu",
+          "ipa": "/bɛr/",
+          "gif": "bear.gif",
+          "audioWordVi": "con_gaasu.mp3",
+          "audioWordEn": "bear.mp3",
+          "sentenceEn": "I like the bear.",
+          "sentenceVi": "tôi thích con gấu.",
+          "audioSentenceVi": "tooi_thisch_con_gaasu.mp3",
+          "audioSentenceEn": "i_like_the_bear.mp3",
+          "questionEn": "(...)",
+          "questionVi": "(...)",
+          "audioQuestion": "lenh1.mp3",
+          "answerEn": "I like the bear.",
+          "audioAnswer": "i_like_the_bear.mp3"
         }
       ]
     }
