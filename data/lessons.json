@@ -80,12 +80,12 @@
       ]
     },
 	    {
-      "id": "lesson2",
-      "title": "Bài 2 - B",
-      "teacherPools": {
-        "type1": ["teacher_03a.png"],
-        "type4": ["teacher_03a.png"],
-        "type5": ["teacher_02a.png"]
+		  "id": "lesson2",
+		  "title": "Bài 2 - B",
+		  "teacherPools": {
+			"type1": ["teacher_03a.png"],
+			"type4": ["teacher_03a.png"],
+			"type5": ["teacher_02a.png"]
       },
       "words": [
         {
@@ -157,6 +157,85 @@
           "audioAnswer": "i_like_the_bear.mp3"
         }
       ]
+    },
+	         {
+                  "id": "lesson3",
+                  "title": "Bài 3 - C",
+                  "teacherPools": {
+                        "type1": ["teacher_03a.png"],
+                        "type4": ["teacher_03a.png"],
+                        "type5": ["teacher_02a.png"]
+                        },
+"words": [
+    {
+        "en": "Computer",
+        "vi": "máy tính",
+        "ipa": "/kəmˈpjuː.tər/",
+        "gif": "Computer.gif",
+        "audioWordVi": "masy_tisnh.mp3",
+        "audioWordEn": "computer.mp3",
+        "sentenceEn": "I have a computer",
+        "sentenceVi": "Tôi có một cái máy tính",
+        "audioSentenceVi": "tooi_cos_moojt_casi_masy_tisnh.mp3",
+        "audioSentenceEn": "i_have_a_computer.mp3",
+        "questionEn": "(...)",
+        "questionVi": "(...)",
+        "audioQuestion": "lenh1.mp3",
+        "answerEn": "I have a computer",
+        "audioAnswer": "i_have_a_computer.mp3"
+    },
+    {
+        "en": "Car",
+        "vi": "ô tô",
+        "ipa": "/kɑːr/",
+        "gif": "Car.gif",
+        "audioWordVi": "oo_too.mp3",
+        "audioWordEn": "car.mp3",
+        "sentenceEn": "I have a car",
+        "sentenceVi": "Tôi có một cái xe ô tô",
+        "audioSentenceVi": "tooi_cos_moojt_casi_xe_oo_too.mp3",
+        "audioSentenceEn": "i_have_a_car.mp3",
+        "questionEn": "(...)",
+        "questionVi": "(...)",
+        "audioQuestion": "lenh1.mp3",
+        "answerEn": "I have a car",
+        "audioAnswer": "i_have_a_car.mp3"
+    },
+    {
+        "en": "Cat",
+        "vi": "con mèo",
+        "ipa": "/kæt/",
+        "gif": "Cat.gif",
+        "audioWordVi": "con_mefo.mp3",
+        "audioWordEn": "cat.mp3",
+        "sentenceEn": "I have a cat",
+        "sentenceVi": "Tôi có một con mèo",
+        "audioSentenceVi": "tooi_cos_moojt_con_mefo.mp3",
+        "audioSentenceEn": "i_have_a_cat.mp3",
+        "questionEn": "(...)",
+        "questionVi": "(...)",
+        "audioQuestion": "lenh1.mp3",
+        "answerEn": "I have a cat",
+        "audioAnswer": "i_have_a_cat.mp3"
+    },
+    {
+        "en": "Cup",
+        "vi": "cái cốc",
+        "ipa": "/kʌp/",
+        "gif": "Cup.gif",
+        "audioWordVi": "casi_coosc.mp3",
+        "audioWordEn": "cup.mp3",
+        "sentenceEn": "I have a cup",
+        "sentenceVi": "Tôi có một cái cốc",
+        "audioSentenceVi": "tooi_cos_moojt_casi_coosc.mp3",
+        "audioSentenceEn": "i_have_a_cup.mp3",
+        "questionEn": "(...)",
+        "questionVi": "(...)",
+        "audioQuestion": "lenh1.mp3",
+        "answerEn": "I have a cup",
+        "audioAnswer": "i_have_a_cup.mp3"
+    }
+]
     }
   ]
 }
