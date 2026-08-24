@@ -236,6 +236,85 @@
         "audioAnswer": "i_have_a_cup.mp3"
     }
 ]
+    },
+	         {
+                  "id": "lesson4",
+                  "title": "Bài 4 - D",
+                  "teacherPools": {
+                        "type1": ["teacher_03a.png"],
+                        "type4": ["teacher_03a.png"],
+                        "type5": ["teacher_02a.png"]
+                        },
+"words": [
+    {
+        "en": "Duck",
+        "vi": "con vịt",
+        "ipa": "/kəmˈpjuː.tər/",
+        "gif": "Duck.gif",
+        "audioWordVi": "con_vijt.mp3",
+        "audioWordEn": "duck.mp3",
+        "sentenceEn": "I want a duck",
+        "sentenceVi": "tôi muốn một con vịt",
+        "audioSentenceVi": "tooi_muoosn_moojt_con_vijt.mp3",
+        "audioSentenceEn": "i_want_a_duck.mp3",
+        "questionEn": "(...)",
+        "questionVi": "(...)",
+        "audioQuestion": "lenh1.mp3",
+        "answerEn": "I want a duck",
+        "audioAnswer": "i_want_a_duck.mp3"
+    },
+    {
+        "en": "Dog",
+        "vi": "con chó",
+        "ipa": "/kɑːr/",
+        "gif": "Dog.gif",
+        "audioWordVi": "con_chos.mp3",
+        "audioWordEn": "dog.mp3",
+        "sentenceEn": "I want a dog",
+        "sentenceVi": "tôi muốn một con chó",
+        "audioSentenceVi": "tooi_muoosn_moojt_con_chos.mp3",
+        "audioSentenceEn": "i_want_a_dog.mp3",
+        "questionEn": "(...)",
+        "questionVi": "(...)",
+        "audioQuestion": "lenh1.mp3",
+        "answerEn": "I want a dog",
+        "audioAnswer": "i_want_a_dog.mp3"
+    },
+    {
+        "en": "Desk",
+        "vi": "bàn học sinh",
+        "ipa": "/kæt/",
+        "gif": "Desk.gif",
+        "audioWordVi": "bafn_hojc_sinh.mp3",
+        "audioWordEn": "desk.mp3",
+        "sentenceEn": "I want a desk",
+        "sentenceVi": "tôi muốn một cái bàn học sinh",
+        "audioSentenceVi": "tooi_muoosn_moojt_casi_bafn_hojc_sinh.mp3",
+        "audioSentenceEn": "i_want_a_desk.mp3",
+        "questionEn": "(...)",
+        "questionVi": "(...)",
+        "audioQuestion": "lenh1.mp3",
+        "answerEn": "I want a desk",
+        "audioAnswer": "i_want_a_desk.mp3"
+    },
+    {
+        "en": "Doll",
+        "vi": "búp bê",
+        "ipa": "/kʌp/",
+        "gif": "Doll.gif",
+        "audioWordVi": "busp_bee.mp3",
+        "audioWordEn": "doll.mp3",
+        "sentenceEn": "I want a doll",
+        "sentenceVi": "tôi muốn một con búp bê",
+        "audioSentenceVi": "tooi_muoosn_moojt_con_busp_bee.mp3",
+        "audioSentenceEn": "i_want_a_doll.mp3",
+        "questionEn": "(...)",
+        "questionVi": "(...)",
+        "audioQuestion": "lenh1.mp3",
+        "answerEn": "I want a doll",
+        "audioAnswer": "i_want_a_doll.mp3"
+    }
+]
     }
   ]
 }
